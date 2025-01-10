@@ -7,9 +7,8 @@ function getConnection(chain = 'solana') {
   }
 
 async function tvl() {
-    // https://jito.network/staking
     const connection = getConnection();
-    const account = await connection.getAccountInfo(new PublicKey('Jito4APyf642JPZPx3hGc6WWJ8zPKtRbRs4P815Awbb'))
+    const account = await connection.getAccountInfo(new PublicKey(''))
     return {
       solana: Number(account.data.readBigUint64LE(258))/1e9
     }
