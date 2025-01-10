@@ -54,6 +54,7 @@ const JITO_VAULT = struct([
     u16(bump),
     Boolean(isPaused),
     u64(lastStartStateUpdateSlot),
+    Array(251),
 ]);
 
 const DELEGATION_STATE = [
@@ -65,7 +66,7 @@ const parseSanctumLstStateList = (account) => {
     const buffer = Buffer.from(data);
     const length = space / 80;
     return seq(
-        SANCTUM_LST_STATE,
+        JITO_VAULT,
         length,
         "lstStateList"
     ).decode(buffer);
